@@ -404,9 +404,65 @@ Ambas as listas foram alteradas pois ambas estão apontando para uma mesma refer
 
 ```
 
+### 🦴 Structs
+
+* Tipos de dados estruturados
+* Apenas a estrutura, o esqueleto
+* Value-Type
+* Definido pela palavra `struct`
+* Composto de propriedades e métodos
+* Criado a partir da palavra `new`
+
+```csharp
+struct Product
+{
+  // Props
+  public int Id;
+  public string Title;
+  public float Price;
+
+  // Methods
+  public float PrinceInDolar(float dolar)
+  {
+    return Price * dolar
+  }
+}
+
+// Para criar uma nova estrutura basta usar a palavra "new" seguido da chamada da chamada do structure
+static void Main(string[] args)
+{
+  Product product = new Product()
+  // ou assim 👇
+  var product = new Product()
+  // nesse caso o tipo é opcional
+
+  product.Id = 1;
+  product.Title = "Mouse Gamer";
+  product.Price = 100;
+
+  Console.WriteLine(product.Id);
+  Console.WriteLine(product.Title);
+  Console.WriteLine(product.Price);
+}
+```
+
+> Obs.: Podemos criar uma `struct` usando também um método construtor. A diferença é que ao instanciar já devemos passar as propriedades.
+
+```csharp
+struct Product
+{
+  public Product(int id, string title, float price)
+  {
+    Id = id;
+    Title = title;
+    Price = price;
+  }
+}
+```
+
 ___
 
-## 💣 Executando o programa
+## 💣 Execução do programa
 
 > A execução de um programa em C# funciona da seguinte maneira:
 
