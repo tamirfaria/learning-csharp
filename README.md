@@ -290,6 +290,120 @@ do
 } while (valor < 5);
 ```
 
+### 🐕‍🦺 Funções e Métodos
+
+_Podemos segmentar nosso programa em `functions` também conhecidos como `methods`. O `main` é um exemplo de `method`. As funções e métodos possuem retorno, nome e parâmetros._
+
+```csharp
+static void Main(string[] args)
+{
+  // Invocação do método
+  MeuMetodo("C# is nice");
+}
+
+// Definição do método
+static void MeuMetodo(string parametro)
+{
+  Console.WriteLine(parametro);
+}
+```
+
+**Obs.:**
+
+1. Não conseguimos criar um método dentro de uma outra função em `C#`. Caso queiramos executar um método dentro de uma função, precisamos criar ela fora do escopo e depois instanciá-lo (caso ele não seja `static`).
+2. Quando identificamos um método como `static` estamos dizendo que ele não precisa ser instanciado, podendo então ser chamado diretamente.
+3. Quando criamos uma função, sempre colocamos o retorno dela no início do método:
+
+```csharp
+// nesse caso o método não retornará nada
+static void MeuMetodo() {...}
+
+// nesse caso o método retornará uma string
+static string RetornaString() {...}
+
+// nesse caso o método retorna um número e precisa ser instanciado
+
+int RandomNumber() {...}
+```
+
+### Value Types e Reference Types
+
+_A memória é dividida entre `Stack` e  `Heap`._
+
+[Artigo - Gerenciamento de memória no C#: stack, heap, value-types e reference-types](https://www.treinaweb.com.br/blog/gerenciamento-de-memoria-no-c-stack-heap-value-types-e-reference-types)
+
+#### → Stack
+
+> Porção de memória pequena onde os value-types e os `ponteiros` ficam;
+
+#### → Heap
+
+> Porção maior de memória onde os reference-types ficam de fato alocados… Para se fazer o acesso a eles, precisamos de um `ponteiro` na stack que indique a posição de memória na heap onde o objeto está de fato alocado.
+
+#### → Value-Types
+
+> São tipos leves (como os tipos primitivos e structs) que ficam armazenados diretamente na memória stack. Os valores das variáveis ficam armazenados juntamente com as próprias variáveis, sendo o acesso ao seu conteúdo feito de maneira direta
+
+#### → Reference-Types
+
+> Tipos pesados (objetos criados a partir de classes, etc.) que ficam armazenados na heap. Para não sacrificar a performance, é criada uma referência (`ponteiro`) na `stack` que aponta para qual posição de memória o objeto está armazenado na `heap`. O acesso é feito via essa referência na `stack`. Sendo assim, o acesso ao conteúdo é indireto, dependendo dessa referência;
+
+```bash
+→ Resumidamente, Built-in, Structs e Enuns são salvos na Stack. Objetos, Classes e Arrays são salvos no Heap, porém são consultados através de uma referência salva na Stack.
+
+→ Quando atribuímos uma variável à outra varíavel de tipo primitivo, criamos uma cópia do valor naquele momento da respectiva variável.
+
+→ Quando criamos uma instância ou atribuímos um valor à outro array ou objeto, atribuímos o valor à referência. Sendo assim, se meu valor do objeto ou array ser alterado, a variável atribuída também será alterada pois estou usando sua referência.
+```
+
+```csharp
+// Value-Types
+
+static void Main(string[] args)
+{
+  int x = 25;
+  int y = x;
+
+  Console.WriteLine(x); // 25
+  Console.WriteLine(y); // 25
+
+  x = 32
+
+  Console.WriteLine(x); // 32
+  Console.WriteLine(y); 
+  
+  // ☝️ o valor continua 25 pois foi realizada uma cópia do valor da variável x naquele momento, e não uma referência
+}
+
+```
+
+```csharp
+// Reference-Types
+
+static void Main(string[] args)
+{
+  var arr = new string[2];
+  arr[0] = "Item 1";
+
+  var arr2 = arr;
+
+  Console.WriteLine(arr[0]); // "Item 1"
+  Console.WriteLine(arr2[0]); // "Item 1"
+
+  arr[0] = "Item 0";
+
+  Console.WriteLine(arr[0]); // "Item 0"
+  Console.WriteLine(arr2[0]); // "Item 0"
+
+/*
+
+Ambas as listas foram alteradas pois ambas estão apontando para uma mesma referência de memória
+
+*/
+}
+
+```
+
 ___
 
 ## 💣 Executando o programa
