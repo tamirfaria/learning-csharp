@@ -240,6 +240,56 @@ _Sempre retorna `verdadeiro` ou `falso`._
 
 _Utilizado o `if` e `else` para tomadas de decisões. Utilizamos os operadores lógicos para compor uma condição._
 
+_Podemos também utilizar o `switch`, conforme exemplo abaixo 👇_
+
+```csharp
+/*
+• utilizado quando temos muitas decisões
+• executado em cascata
+• devemos parar a execução com o break
+• possui uma execução padrão chamada default
+*/
+
+int valor = 1;
+switch (valor)
+{
+  case 1: Console.WriteLine("1"); break;
+  case 2: Console.WriteLine("2"); break;
+  case 3: Console.WriteLine("3"); break;
+  default: Console.WriteLine("4"); break;
+}
+```
+
+### ➰ Laços de Repetição
+
+_Servem para percorrermos uma determinada lista e criar manipulações, utilizar os dados ou criar novas listas._
+
+#### → For
+
+```csharp
+for (var 1 = 0; i <= 5; i++)
+```
+
+#### → While
+
+```csharp
+while (valor <= 5)
+{
+  Console.WriteLine(valor);
+  valor++;
+}
+```
+
+#### → Do/While
+
+```csharp
+do
+{
+  Console.WriteLine(valor);
+  valor++;
+} while (valor < 5);
+```
+
 ___
 
 ## 💣 Executando o programa
