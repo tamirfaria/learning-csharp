@@ -460,6 +460,31 @@ struct Product
 }
 ```
 
+### 🔢 Enumeradores
+
+_Usado para fornecer uma melhor visualização do código. Substituem o uso de inteiros e são usados em listas curtas e dados fixos._
+
+```csharp
+enum EEstadoCivil
+{
+  Solteiro = 1,
+  Casado = 2,
+  Divorciado = 3
+}
+
+struct Cliente
+{
+  public string Nome;
+  public EEstadoCivil EstadoCivil;
+}
+
+var cliente = new Cliente("João Silva", EEstadoCivil.Casado);
+
+Console.WriteLine(cliente.EstadoCivil) // Casado
+Console.WriteLine((int)cliente.EstadoCivil) // 2
+
+```
+
 ___
 
 ## 💣 Execução do programa
