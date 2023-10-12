@@ -4,44 +4,60 @@
   {
     static void Main(string[] args)
     {
-      Product mouse = new(1, "Mouse Gamer", 119.90, EProductType.Product);
-      Product eletricService = new(2, "Eletric Services", 220.90, EProductType.Service);
-
-      Console.WriteLine(mouse.Id);
-      Console.WriteLine(mouse.Name);
-      Console.WriteLine(mouse.Price);
-      Console.WriteLine(mouse.ProductType);
-
-      Console.WriteLine(eletricService.Id);
-      Console.WriteLine(eletricService.Name);
-      Console.WriteLine(eletricService.Price);
-      Console.WriteLine(eletricService.ProductType);
+      Calculator();
     }
-  }
 
-  struct Product
-  {
-    public Product(int id, string name, double price, EProductType productType)
+    static void Calculator()
     {
-      Id = id;
-      Name = name;
-      Price = price;
-      ProductType = productType;
-    }
-    public int Id;
-    public string Name;
-    public double Price;
+      Console.Clear();
+      Console.WriteLine("Digite o primeiro valor: ");
+      float firstValue = float.Parse(Console.ReadLine());
+      Console.WriteLine("");
 
-    public EProductType ProductType;
-    public readonly double PriceInDolar(double dolar)
+      Console.WriteLine("Digite o operador do calculo");
+      string calOperator = Console.ReadLine();
+      bool isValidOperator = OperatorValidation(calOperator);
+      Console.WriteLine("");
+      if (!isValidOperator)
+        return;
+
+      Console.WriteLine("Agora digite o segundo valor: ");
+      float secondValue = float.Parse(Console.ReadLine());
+      Console.WriteLine("");
+
+      float sum = firstValue + secondValue;
+      float sub = firstValue - secondValue;
+      float mul = firstValue * secondValue;
+      float div = firstValue / secondValue;
+      float res = firstValue % secondValue;
+
+      if (calOperator == "+")
+        Console.WriteLine($"A soma dos valores é {sum}.");
+
+      if (calOperator == "-")
+        Console.WriteLine($"A subtração dos valores é {sub}.");
+
+      if (calOperator == "*")
+        Console.WriteLine($"A multiplicação dos valores é {mul}");
+
+      if (calOperator == "/")
+        Console.WriteLine($"A divisão dos valores é {div}.");
+
+      if (calOperator == "%")
+        Console.WriteLine($"O resto da divisão dos valores é {res}.");
+    }
+
+    static bool OperatorValidation(string calOperator)
     {
-      return Price * dolar;
-    }
-  }
+      bool isValidOperator = calOperator == "+" || calOperator == "-" || calOperator == "*" || calOperator == "/" || calOperator == "%";
 
-  enum EProductType
-  {
-    Product = 1,
-    Service = 2
+      if (!isValidOperator)
+      {
+        Console.WriteLine("Operador incorreto.");
+        Console.WriteLine("Gentileza tentar novamente.");
+        return false;
+      }
+      return true;
+    }
   }
 }
