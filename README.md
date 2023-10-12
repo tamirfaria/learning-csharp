@@ -212,9 +212,10 @@ int x = 0; // Inicialização e atribuição
 x += 5; // resultado → 5
 x -= 1; // resultado → 4
 x *=10; // resultado → 40
-x /= 2 // resultado → 20 
-x++ // resultado → 21 (incremento)
-x-- // resultado → 20 (decremento)
+x /= 2; // resultado → 20 
+x++; // resultado → 21 (incremento)
+x--; // resultado → 20 (decremento)
+x % 3; // resultado → 2
 ```
 
 #### → Operadores de Comparação
@@ -267,7 +268,7 @@ _Servem para percorrermos uma determinada lista e criar manipulações, utilizar
 #### → For
 
 ```csharp
-for (var 1 = 0; i <= 5; i++)
+for (var i = 0; i <= 5; i++)
 ```
 
 #### → While
