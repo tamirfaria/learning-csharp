@@ -11,18 +11,34 @@
     {
       Console.Clear();
       Console.WriteLine("Digite o primeiro valor: ");
-      float firstValue = float.Parse(Console.ReadLine());
+      float firstValue = float.Parse(Console.ReadLine()!);
       Console.WriteLine("");
 
-      Console.WriteLine("Digite o operador do calculo");
-      string calOperator = Console.ReadLine();
-      bool isValidOperator = OperatorValidation(calOperator);
+      string restartText = "Pressione enter para realizar outra operação ou 'CTRL + C' para finalizar.";
+
+      Console.WriteLine("Digite o operador do cálculo");
+      string? calOperator = Console.ReadLine();
       Console.WriteLine("");
+
+      bool isValidOperator =
+        calOperator == "+" ||
+        calOperator == "-" ||
+        calOperator == "*" ||
+        calOperator == "/" ||
+        calOperator == "%";
+
       if (!isValidOperator)
-        return;
+      {
+        Console.WriteLine(
+$@"Operador incorreto.
+Gentileza tentar novamente.
+{restartText}"
+        );
+        RestartApplication();
+      }
 
       Console.WriteLine("Agora digite o segundo valor: ");
-      float secondValue = float.Parse(Console.ReadLine());
+      float secondValue = float.Parse(Console.ReadLine()!);
       Console.WriteLine("");
 
       float sum = firstValue + secondValue;
@@ -31,33 +47,45 @@
       float div = firstValue / secondValue;
       float res = firstValue % secondValue;
 
-      if (calOperator == "+")
-        Console.WriteLine($"A soma dos valores é {sum}.");
+      switch (calOperator)
+      {
+        case "+":
+          Console.WriteLine(
+$@"A soma dos valores é {sum}.
+{restartText}"); RestartApplication(); break;
 
-      if (calOperator == "-")
-        Console.WriteLine($"A subtração dos valores é {sub}.");
+        case "-":
+          Console.WriteLine(
+$@"A subtração dos valores é {sub}.
+{restartText}"); RestartApplication(); break;
 
-      if (calOperator == "*")
-        Console.WriteLine($"A multiplicação dos valores é {mul}");
+        case "*":
+          Console.WriteLine(
+$@"A multiplicação dos valores é {mul}.
+{restartText}"); RestartApplication(); break;
 
-      if (calOperator == "/")
-        Console.WriteLine($"A divisão dos valores é {div}.");
+        case "/":
+          Console.WriteLine(
+$@"A divisão dos valores é {div}.
+{restartText}"); RestartApplication(); break;
 
-      if (calOperator == "%")
-        Console.WriteLine($"O resto da divisão dos valores é {res}.");
+        case "%":
+          Console.WriteLine(
+$@"O resto da divisão dos valores é {res}.
+{restartText}"); RestartApplication(); break;
+
+        default:
+          Console.WriteLine(
+$@"Operador incorreto.
+Gentileza tentar novamente.
+{restartText}"); RestartApplication(); break;
+      }
     }
 
-    static bool OperatorValidation(string calOperator)
+    static void RestartApplication()
     {
-      bool isValidOperator = calOperator == "+" || calOperator == "-" || calOperator == "*" || calOperator == "/" || calOperator == "%";
-
-      if (!isValidOperator)
-      {
-        Console.WriteLine("Operador incorreto.");
-        Console.WriteLine("Gentileza tentar novamente.");
-        return false;
-      }
-      return true;
+      Console.ReadKey();
+      Calculator();
     }
   }
 }
