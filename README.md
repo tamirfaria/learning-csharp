@@ -500,3 +500,7 @@ ___
 * Sobrará apenas a divisão lógica, que são os `Namespaces`
 
 ___
+
+## 🖱️ Criando um novo projeto
+
+`dotnet new console -o MyNewProject`
