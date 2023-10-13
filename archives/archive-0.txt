@@ -1,2 +1,1 @@
-Este é um texto teste.
-É esperado que haja uma quebra de linha aqui.
+Arquivo 0

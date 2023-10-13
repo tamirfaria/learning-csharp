@@ -198,7 +198,33 @@
 
     static void OpenFile()
     {
+      string[] archivesList = Directory.GetFiles("archives");
+      Console.Clear();
+      Console.WriteLine("📂 Digite o número do arquivo que vc deseja abrir:");
+      Console.WriteLine("");
+      for (var i = 0; i < archivesList.Length; i++)
+      {
+        Console.WriteLine($"📝 {i} - {archivesList[i]}");
+      }
+      uint option = uint.Parse(Console.ReadLine()!);
+      if (option > archivesList.Length - 1)
+      {
+        Console.WriteLine("❌ Comando inválido. Tente novamente");
+        Thread.Sleep(1000);
+        OpenFile();
+      }
 
+      string path = $"archives/archive-{option}.txt";
+      using var file = new StreamReader(path);
+      string text = file.ReadToEnd();
+
+      Console.Clear();
+      Console.WriteLine($"📄 - {path}");
+      Console.WriteLine("");
+      Console.WriteLine(text);
+      Console.WriteLine("");
+      Console.WriteLine("❌ Digite ENTER para sair");
+      Console.ReadLine();
     }
 
     static void EditFile()
