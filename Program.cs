@@ -11,7 +11,9 @@
     {
       Console.Clear();
       Console.WriteLine("• Menu •");
+      Console.WriteLine("");
       Console.WriteLine("Escolha a opção desejada:");
+      Console.WriteLine("");
       Console.WriteLine("1 - 🧮 Calculadora");
       Console.WriteLine("2 - ⏳ Cronômetro");
       Console.WriteLine("3 - 📖 Editor de Texto");
@@ -50,6 +52,7 @@
     {
       Console.Clear();
       Console.WriteLine("• Calculadora •");
+      Console.WriteLine("");
       Console.WriteLine("Digite o primeiro valor: ");
       float firstValue = float.Parse(Console.ReadLine()!);
       Console.WriteLine("");
@@ -130,6 +133,7 @@
     {
       Console.Clear();
       Console.WriteLine("• Cronômetro •");
+      Console.WriteLine("");
       Console.WriteLine("Digite o tempo do cronômetro em segundos:");
       int seconds = int.Parse(Console.ReadLine()!);
       Console.WriteLine("");
@@ -162,7 +166,9 @@
     {
       Console.Clear();
       Console.WriteLine("• Editor de Texto •");
+      Console.WriteLine("");
       Console.WriteLine("Digite a ação desejada: ");
+      Console.WriteLine("");
       Console.WriteLine("1 - 📃 Abrir um arquivo");
       Console.WriteLine("2 - 📄 Criar um arquivo");
       Console.WriteLine("3 - ❌ Sair");
@@ -198,16 +204,33 @@
     static void EditFile()
     {
       Console.Clear();
-      Console.WriteLine("↓ Digite seu texto aqui abaixo ↓");
-      Console.WriteLine("• Digite ESC para sair •");
+      Console.WriteLine("❌ Digite ESC para sair");
+      Console.WriteLine("📄 Digite seu texto aqui abaixo");
       Console.WriteLine("");
       string text = "";
-      bool isEscKey = Console.ReadKey().Key == ConsoleKey.Escape;
 
-      while (!isEscKey)
+      do
       {
-
+        text += Console.ReadLine();
+        text += Environment.NewLine;
       }
+      while (Console.ReadKey().Key != ConsoleKey.Escape);
+
+      SaveFile(text);
+    }
+
+    static void SaveFile(string text)
+    {
+      Console.Clear();
+      int directoryLength = Directory.GetFiles("archives").Length;
+      string path = $"archives/archive-{directoryLength}.txt";
+
+      using var file = new StreamWriter(path);
+      file.Write(text);
+
+      Console.WriteLine("💾 Arquivo salvo com sucesso");
+      Console.WriteLine("❌ Digite ENTER para sair");
+      Console.ReadLine();
     }
   }
 }
