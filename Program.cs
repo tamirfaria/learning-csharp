@@ -14,19 +14,22 @@
       Console.WriteLine("Escolha a opção desejada:");
       Console.WriteLine("1 - 🧮 Calculadora");
       Console.WriteLine("2 - ⏳ Cronômetro");
-      Console.WriteLine("3 - ❌ Sair");
+      Console.WriteLine("3 - 📖 Editor de Texto");
+      Console.WriteLine("4 - ❌ Sair");
 
       int menuOptionChange = int.Parse(Console.ReadLine()!);
       bool isValidInput =
         menuOptionChange == 1 ||
         menuOptionChange == 2 ||
-        menuOptionChange == 3;
+        menuOptionChange == 3 ||
+        menuOptionChange == 4;
 
       switch (menuOptionChange)
       {
         case 1: Calculator(); break;
         case 2: Stopwatch(); break;
-        case 3: Environment.Exit(0); break;
+        case 3: TextEditor(); break;
+        case 4: Environment.Exit(0); break;
         default:
           Console.WriteLine("Entrada inválida");
           Thread.Sleep(1000);
@@ -152,6 +155,58 @@
         Console.WriteLine("⏳ : Cronômetro finalizado.");
         Console.WriteLine("Para reiniciar aperte ENTER ou CTRL + C para finalizar."); Console.ReadKey();
         Stopwatch();
+      }
+    }
+
+    static void TextEditor()
+    {
+      Console.Clear();
+      Console.WriteLine("• Editor de Texto •");
+      Console.WriteLine("Digite a ação desejada: ");
+      Console.WriteLine("1 - 📃 Abrir um arquivo");
+      Console.WriteLine("2 - 📄 Criar um arquivo");
+      Console.WriteLine("3 - ❌ Sair");
+
+      short option = short.Parse(Console.ReadLine()!);
+      string invalidText = "Opção inválida. Tente novamente.";
+      bool isValidOption =
+        option == 1 ||
+        option == 2 ||
+        option == 3;
+
+      if (!isValidOption)
+      {
+        Console.WriteLine(invalidText);
+        Thread.Sleep(1000);
+        TextEditor();
+      }
+
+      switch (option)
+      {
+        case 1: OpenFile(); break;
+        case 2: EditFile(); break;
+        case 3: Environment.Exit(0); break;
+        default: break;
+      }
+    }
+
+    static void OpenFile()
+    {
+
+    }
+
+    static void EditFile()
+    {
+      Console.Clear();
+      Console.WriteLine("↓ Digite seu texto aqui abaixo ↓");
+      Console.WriteLine("• Digite ESC para sair •");
+      Console.WriteLine("");
+      string text = "";
+      bool isEscKey = Console.ReadKey().Key == ConsoleKey.Escape;
+
+      while (!isEscKey)
+      {
+
       }
     }
   }
