@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IVgL4CjpZf3DgNBlAex+CsKLkT8iG1wurKti+S5CyeVSme0yq7X+y3XtO8NVUrMl4eDFPblKQrPaRUf12AAWFg==",
+  "dgSpecHash": "H5+jexNDX5FAzdv5bcij3txJzZc8+Tc0pmFFMkkaVagsZD/CDXWHUQRsXbRAPkvHIzz+LW8sUB2cXXGPp26vpQ==",
   "success": true,
-  "projectFilePath": "/home/tamirfaria/Development/learning-dotnet/HelloWord/HelloWord.csproj",
+  "projectFilePath": "/home/tamirfaria/Development/learning-dotnet/HelloWorld/HelloWorld.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

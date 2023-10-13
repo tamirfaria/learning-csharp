@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/tamirfaria/Development/learning-dotnet/HelloWord/HelloWord.csproj": {}
+    "/home/tamirfaria/Development/learning-dotnet/HelloWorld/HelloWorld.csproj": {}
   },
   "projects": {
-    "/home/tamirfaria/Development/learning-dotnet/HelloWord/HelloWord.csproj": {
+    "/home/tamirfaria/Development/learning-dotnet/HelloWorld/HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tamirfaria/Development/learning-dotnet/HelloWord/HelloWord.csproj",
-        "projectName": "HelloWord",
-        "projectPath": "/home/tamirfaria/Development/learning-dotnet/HelloWord/HelloWord.csproj",
+        "projectUniqueName": "/home/tamirfaria/Development/learning-dotnet/HelloWorld/HelloWorld.csproj",
+        "projectName": "HelloWorld",
+        "projectPath": "/home/tamirfaria/Development/learning-dotnet/HelloWorld/HelloWorld.csproj",
         "packagesPath": "/home/tamirfaria/.nuget/packages/",
-        "outputPath": "/home/tamirfaria/Development/learning-dotnet/HelloWord/obj/",
+        "outputPath": "/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tamirfaria/.nuget/NuGet/NuGet.Config"
