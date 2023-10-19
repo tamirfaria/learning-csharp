@@ -204,7 +204,7 @@
       Console.WriteLine("");
       for (var i = 0; i < archivesList.Length; i++)
       {
-        Console.WriteLine($"📝 {i} - {archivesList[i]}");
+        Console.WriteLine($"📝 {i} - archives/archive-{i}.txt");
       }
       uint option = uint.Parse(Console.ReadLine()!);
       if (option > archivesList.Length - 1)
