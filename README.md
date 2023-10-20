@@ -486,6 +486,50 @@ Console.WriteLine((int)cliente.EstadoCivil) // 2
 
 ```
 
+### ✏️ Strings
+
+> Strings são o que? São "_letras, são números, são caracteres, e tudo mais que cabe em aspas_".
+
+#### → GUID
+
+> São sequências de caracteres randomicas utilizadas como identificação única de um registro, usuário, produto, etc.
+
+```csharp
+using System;
+var id = Guid.NewGuid();
+```
+
+Se precisarmos usar um valor randômico basta instanciar o `Guid`. Se precisarmos que o `id` possua menos caracteres, basta usar o método `Substring`.
+
+```csharp
+id.ToString().Substring(i,q);
+// sendo "i" a posição inicial e "q" a quantidade total de caracteres.
+// ex: Substring(0, 8)
+```
+
+#### → Interpolação de strings
+
+> Conseguimos unir strings para que uma determinada mensagem seja passada de forma legível para o usuário. Podemos fazer essa interpolação de várias maneiras:
+
+```csharp
+// usando o operador +
+var presentation = "Meu nome é";
+var name = "João da Couve";
+var myPresentation = "Meu nome é" + " " + name;
+
+// usando string.Format()
+var price = 15.99;
+var finalPrice = string.Format("O preço final é {0}", price);
+
+// usando $
+// obs.: podemos usar @ para escrever multiplas linhas
+var helloWorld = $"Olá mundo, meu nome é {name}."
+var text = $@"Era uma vez...
+E a chapeuzinho vermelho...
+E por fim matou o lobo...
+FIM."
+```
+
 ___
 
 ## 💣 Execução do programa
