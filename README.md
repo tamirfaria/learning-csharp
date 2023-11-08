@@ -530,6 +530,77 @@ E por fim matou o lobo...
 FIM."
 ```
 
+#### → Comparação de Textos
+
+> Podemos comparar e analisar ou verificar se uma string contém algum elemento ou pedaço de texto
+
+```csharp
+var texto = "Testando";
+
+Console.WriteLine(texto.CompareTo("Testando"));
+// CompareTo ou Equals retornará um inteiro sendo -1 para false e 0 para true
+
+Console.WriteLine(texto.Contains("Testando algo"));
+// Contains informará se o que foi passado como parâmetro existe na variável, retornando um boolean
+
+Console.WriteLine(texto.StartsWith("Este"));
+// Verifica se a string começa com o parâmetro retornando um boolean
+
+Console.WriteLine(texto.EndWith("por fim."));
+// Verifica se a string termina com o parâmetro retornando um boolean
+
+Console.WriteLine(texto.Equals)
+
+```
+
+Como segundo parâmetro dos métodos apresentados existe o objeto `StringComparison` que possui propriedades das quais é possível informar o nível de comparação que desejamos.
+
+#### → Índice
+
+> Diz respeito à posição de um caracter ou conjunto de caracter em uma lista/string
+
+```csharp
+var texto = "Este texto é uma lista de caracteres"
+Console.WriteLine(texto.IndexOf("lista"))
+// Retornará um número informando em qual posição o parâmetro está.
+// Assim que encontrar pela primeira vez o parâmetro, retornará a posição dele
+// Os índices iniciam em zero
+
+Console.WriteLine(texto.LastIndexOf("s"))
+// Retornará um número informando em qual posição o parâmetro está
+// Porém considera sempre a posição do último caracter encontrado ao invés do primeiro como no método IndexOf()
+```
+
+#### → Convertendo Texto
+
+```csharp
+var texto = "Isso é um teste"
+Console.WriteLine(texto.toLowerCase()) // todas as letras minúsculas
+Console.WriteLine(texto.toUpperCase()) // todas as letras maiúsculas
+Console.WriteLine(texto.Insert(5, "aqui ")) // insere texto na posição definida
+Console.WriteLine(texto.Remove(5, 5)) // remove um texto de um tamanho definido na posição definida
+Console.WriteLine(texto.Length) // retorna a quantidade de caracteres de uma string/lista
+Console.WriteLine(texto.Replace("Isso", "Este")) // substitui os caracteres ou textos da string
+
+var splitTexto = texto.Split(" ") // transforma a string em uma lista, cujos elementos são separados a partir do caracter informado nos parâmetros
+
+var substringTexto = texto.Substring(5, 5) // pega os caracteres a partir do índice e com a quantidade de caracteres definido
+
+var trimTexto = texto.Trim() // remove os espaços no início e fim de uma string
+```
+
+#### → StringBuilder
+
+> Podemos incrementar uma variável do tipo string fazendo `variavelString += " um pouco mais de texto"`, porém tal prática faz com que seja criada uma nova cópia da variável em cada incremento. Dependendo da complexidade e tamanho da apliação isso não é nada bom para a memória. Uma opção melhor seria usar o StringBuilder conforme abaixo:
+
+```csharp
+var texto = new StringBuilder();
+texto.Append("Meu nome é fulano.");
+texto.Append(" Eu nasci a dez mil anos atrás.");
+texto.Append(" E possuo miopia.");
+```
+
+Fazendo isso, ao invés de criar uma cópia da variável à cada incremento, estaremos adicionando caracteres à um objeto. Para usar a variável como uma string é só utilizar o `texto.ToString()`.
 ___
 
 ## 💣 Execução do programa
