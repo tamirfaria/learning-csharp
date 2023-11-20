@@ -1,0 +1,14 @@
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/bin/Debug/net7.0/HelloWorld
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/bin/Debug/net7.0/HelloWorld.deps.json
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/bin/Debug/net7.0/HelloWorld.runtimeconfig.json
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/bin/Debug/net7.0/HelloWorld.dll
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/bin/Debug/net7.0/HelloWorld.pdb
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/HelloWorld.AssemblyInfoInputs.cache
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/HelloWorld.AssemblyInfo.cs
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/HelloWorld.csproj.CoreCompileInputs.cache
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/HelloWorld.dll
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/refint/HelloWorld.dll
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/HelloWorld.pdb
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/HelloWorld.genruntimeconfig.cache
+/home/tamirfaria/Development/learning-dotnet/HelloWorld/obj/Debug/net7.0/ref/HelloWorld.dll

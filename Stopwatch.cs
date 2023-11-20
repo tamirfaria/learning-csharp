@@ -31,7 +31,8 @@ namespace MyApp
       {
         Console.Clear();
         Console.WriteLine("⏳ : Cronômetro finalizado.");
-        Console.WriteLine("Para reiniciar aperte ENTER ou CTRL + C para finalizar."); Console.ReadKey();
+        Console.WriteLine("Para reiniciar aperte ENTER ou CTRL + C para finalizar.");
+        Console.ReadKey();
         Start();
       }
     }
