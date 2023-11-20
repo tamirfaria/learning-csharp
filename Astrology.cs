@@ -29,24 +29,40 @@ namespace MyApp
       Thread.Sleep(1000);
       Console.WriteLine("Vamos começar conhecendo seu nome!");
       Console.WriteLine("");
+      Thread.Sleep(1000);
       Console.WriteLine("Como podemos te chamar?");
       Console.WriteLine("");
       string name = Console.ReadLine()!;
+
+      Console.Clear();
+      Console.WriteLine("• Horóscopo •");
+      Console.WriteLine("");
       Console.WriteLine($"{name}, digite por favor o MÊS de seu nascimento: ");
+      Console.WriteLine("");
       int month = int.Parse(Console.ReadLine()!);
-      Console.WriteLine($"{name}, por fim digite o DIA de seu nascimento: ");
+
+      Console.Clear();
+      Console.WriteLine("• Horóscopo •");
+      Console.WriteLine("");
+      Console.WriteLine($"{name}, agora digite o DIA de seu nascimento: ");
+      Console.WriteLine("");
       int day = int.Parse(Console.ReadLine()!);
+
       Console.Clear();
       Console.WriteLine("• Horóscopo •");
       Console.WriteLine("");
       Console.WriteLine("Só um momento... estamos verificando seu mapa astral");
       Console.WriteLine("");
+      Thread.Sleep(3000);
 
+      Console.Clear();
+      Console.WriteLine("• Horóscopo •");
+      Console.WriteLine("");
       DateTime birthday = new(1900, month, day);
       ZodiacSign sign = GetZodiacSign(birthday);
 
       Console.WriteLine($"Seu signo é: {GetSignDescription(sign)}");
-
+      Console.WriteLine("");
       Thread.Sleep(1000);
       Console.WriteLine("Para finalizar aperte CTRL + C.");
       Console.ReadKey();
