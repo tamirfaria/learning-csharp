@@ -13,7 +13,8 @@ namespace MyApp
       Console.WriteLine("2 - ⏳ Cronômetro");
       Console.WriteLine("3 - 📖 Editor de Texto");
       Console.WriteLine("4 - 📆 Visualizador de Data");
-      Console.WriteLine("5 - ❌ Sair");
+      Console.WriteLine("5 - 💫 Meu Zodíaco");
+      Console.WriteLine("6 - ❌ Sair");
       Console.WriteLine("");
 
       int menuOptionChange = int.Parse(Console.ReadLine()!);
@@ -29,7 +30,8 @@ namespace MyApp
         case 2: Stopwatch.Start(); break;
         case 3: TextEditor.Start(); break;
         case 4: Date.Start(); break;
-        case 5: Environment.Exit(0); break;
+        case 5: Astrology.Start(); break;
+        case 6: Environment.Exit(0); break;
         default:
           Console.WriteLine("Entrada inválida");
           Thread.Sleep(1000);
