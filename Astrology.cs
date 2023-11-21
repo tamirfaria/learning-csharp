@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace MyApp
 {
   public static class Astrology
@@ -37,6 +39,13 @@ namespace MyApp
       Console.Clear();
       Console.WriteLine("• Horóscopo •");
       Console.WriteLine("");
+      Console.WriteLine($"{name}, primeiro me fale o ANO de seu nascimento: ");
+      Console.WriteLine("");
+      int year = int.Parse(Console.ReadLine()!);
+
+      Console.Clear();
+      Console.WriteLine("• Horóscopo •");
+      Console.WriteLine("");
       Console.WriteLine($"{name}, digite por favor o MÊS de seu nascimento: ");
       Console.WriteLine("");
       int month = int.Parse(Console.ReadLine()!);
@@ -60,8 +69,10 @@ namespace MyApp
       Console.WriteLine("");
       DateTime birthday = new(1900, month, day);
       ZodiacSign sign = GetZodiacSign(birthday);
-
-      Console.WriteLine($"Seu signo é: {GetSignDescription(sign)}");
+      var birthdayDateFull = string.Format("{0:dd/MM/yyyy}", new DateTime(year, month, day));
+      Console.WriteLine($"Nome: {name}");
+      Console.WriteLine($"Nascimento: {birthdayDateFull}");
+      Console.WriteLine($"Signo: {GetSignDescription(sign)}");
       Console.WriteLine("");
       Thread.Sleep(1000);
       Console.WriteLine("Para finalizar aperte CTRL + C.");
